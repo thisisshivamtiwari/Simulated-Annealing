@@ -1,0 +1,47 @@
+OR-Library
+J E Beasley
+OR-Library is a collection of test data sets for a variety of OR problems.
+
+A full list of the test data sets available in OR-Library can be found here.
+
+
+Set partitioning
+There are 60 data files.
+55 of these data files are the ones solved in "Constraint handing 
+in genetic algorithms: the set partitioning problem" 
+by P.C. Chu and J.E. Beasley, Journal of Heuristics, 
+vol. 4, 1998, 323-357.
+These data files are:
+   sppnw01, sppnw02, ..., sppnw43
+   sppaa01, sppaa02, ..., sppaa06
+   sppus01, sppus02, ..., sppus04
+   sppkl01, sppkl02
+The format of these data files is:
+   number of rows, number of columns (n)
+   for each column j (j=1,...,n) in turn:
+      column cost, number of rows covered by j, list of the rows covered by j
+These data files have been contributed by K.L. Hoffman and D. Levine
+A subset of these problems have been solved in:
+K.L.Hoffman and M.Padberg, "Solving airline crew scheduling 
+problems by branch-and-cut", Management Science, vol. 39, no. 6,
+pp657-682, June 1993. A perl script to convert these files to MPS format
+contributed by David Levine can be found here 
+The remaining 5 data files are the files used in:
+A lagrangean relaxation based algorithm for solving set partitioning problems
+by Krieken, M.G.C. van; Fleuren, H.A.; Peeters, M.J.P. (2004), see
+http://greywww.kub.nl:2080/greyfiles/center/2004/44.html
+These files are:
+   bills_snowflake
+   delta
+   exotic_fives
+   heart
+   meteor
+These files have the same data format as described above and
+have been contributed by Maaike van Krieken (M.G.C.vanKrieken@uvt.nl)
+The largest file is sppus01 of size 68Mb (approximately)
+The entire set of files is of size 124Mb (approximately).
+Click here to access these files
+
+OTHER SOURCES
+
+Other test problems are available here

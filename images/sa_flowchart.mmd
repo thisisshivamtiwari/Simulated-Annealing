@@ -1,0 +1,33 @@
+flowchart TD
+    A([Start]) --> B[Set parameters: T0, alpha, iterations, num_restarts, penalty_weight]
+    B --> C[restart = 0]
+    C --> D{restart == 0?}
+    D -- Yes --> E[Generate initial solution using Greedy Construction]
+    D -- No --> F[Generate initial solution using Pseudo-Random Init]
+    E --> G[Apply Heuristic Improvement to initial solution]
+    F --> G
+    G --> H[Compute current objective: f = cost + penalty x violation]
+    H --> I[Set T = 0.4 x max_cost]
+    I --> J[iter = 0]
+    J --> K{iter < max_iterations?}
+    K -- No --> R{restart < num_restarts?}
+    K -- Yes --> L{Random move type?}
+    L -- "Swap p=0.55" --> M[Remove random selected column, Add neighbouring column]
+    L -- "Remove p=0.20" --> N[Remove random selected column]
+    L -- "Add p=0.25" --> O[Add column covering uncovered row or random unselected]
+    M --> P[Compute delta_objective]
+    N --> P
+    O --> P
+    P --> Q{"delta_obj <= 0 OR rand < exp(-delta_obj/T)?"}
+    Q -- Yes --> S[Accept move, update solution]
+    Q -- No --> T[Reject move]
+    S --> U{Feasible AND cost < best_cost?}
+    T --> V["T = T x alpha, iter++"]
+    U -- Yes --> W[Update best solution]
+    U -- No --> V
+    W --> V
+    V --> K
+    R -- Yes --> X[restart++]
+    X --> D
+    R -- No --> Y[Return best feasible solution found]
+    Y --> Z([End])

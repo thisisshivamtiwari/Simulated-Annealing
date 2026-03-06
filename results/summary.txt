@@ -1,0 +1,31 @@
+==========================================================================================
+COMBINED RESULTS SUMMARY — 30 INDEPENDENT RUNS PER ALGORITHM
+==========================================================================================
+
+Problem: sppnw41.txt  (optimal = 6942)
+------------------------------------------------------------------------------------------
+  Algorithm                   Best     Worst        Mean         Std    Feasible    Avg Time
+  ──────────────────────  ────────  ────────  ──────────  ──────────  ──────────  ──────────
+  Simulated Annealing        11307     11307    11307.00        0.00       30/30       23.41
+  Standard BGA               11307     12102    11435.70      229.54       30/30        6.32
+  Improved BGA               11307     11307    11307.00        0.00       30/30       31.22
+
+Problem: sppnw42.txt  (optimal = 8405)
+------------------------------------------------------------------------------------------
+  Algorithm                   Best     Worst        Mean         Std    Feasible    Avg Time
+  ──────────────────────  ────────  ────────  ──────────  ──────────  ──────────  ──────────
+  Simulated Annealing         7656      8330     7741.80      137.49       30/30      124.28
+  Standard BGA                7656     11080     9228.15     1177.78       27/30       29.84
+  Improved BGA                7656      7714     7665.27        9.98       30/30      182.78
+
+Problem: sppnw43.txt  (optimal = 8853)
+------------------------------------------------------------------------------------------
+  Algorithm                   Best     Worst        Mean         Std    Feasible    Avg Time
+  ──────────────────────  ────────  ────────  ──────────  ──────────  ──────────  ──────────
+  Simulated Annealing         9216     10274     9754.27      264.62       30/30      100.73
+  Standard BGA                9138     12740    10441.73      890.78       30/30       30.01
+  Improved BGA                8904      8974     8925.00       32.08       30/30      335.68
+
+
+Note: Statistics computed over feasible solutions only (where all rows are covered exactly once).
+Seeds used: 1 to 30 (one per independent run).

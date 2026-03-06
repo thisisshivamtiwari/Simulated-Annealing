@@ -1,0 +1,28 @@
+flowchart TD
+    A([Start]) --> B["Set parameters: pop_size, generations, crossover_rate, mutation_rate, pf"]
+    B --> C[Initialize population using Pseudo-Random Init Algorithm 2]
+    C --> D[Apply Full Heuristic Improvement Algorithm 1 to each individual]
+    D --> E[Compute cost and violation for all individuals]
+    E --> F[Track best feasible solution]
+    F --> G[gen = 0]
+    G --> H{gen < num_generations?}
+    H -- No --> Q[Apply Stochastic Ranking to final population]
+    H -- Yes --> I[Apply Stochastic Ranking to get ranked indices]
+    I --> J["Create new population with elitism: keep best"]
+    J --> K["Tournament Selection using rank, select 2 parents"]
+    K --> L{rand < crossover_rate?}
+    L -- Yes --> M1["Uniform Crossover -> 2 offspring"]
+    L -- No --> M2[Copy parents as offspring]
+    M1 --> N[Bit-Flip Mutation on each offspring]
+    M2 --> N
+    N --> O["Apply Fast Heuristic Improvement (Phases 1-3 only)"]
+    O --> O2[Add offspring to new population]
+    O2 --> O3{Population full?}
+    O3 -- No --> K
+    O3 -- Yes --> P[Evaluate new population, update best]
+    P --> P2[gen++]
+    P2 --> H
+    Q --> R[Apply Full Heuristic Improvement to top 20 individuals]
+    R --> S[Update best feasible solution]
+    S --> T[Return best solution]
+    T --> U([End])
